@@ -477,8 +477,6 @@ const cities = [
 const infoUrl = (index) => `https://travel.state.gov/content/travel/resources/database/database.getVisaWaitTimes.html?cid=${index}&aid=VisaWaitTimesHomePage`;
 
 const filename = process.argv.length === 3 ? process.argv[2] : 'index.csv';
-console.log(`Selected file: ${filename} (To change it run "node index.js filename")`);
-
 const infos = cities.map((city) => new Promise((resolve) => {
     getInfo(city.code)
         .then((data) => {
